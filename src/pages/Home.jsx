@@ -5,8 +5,6 @@ import Services from "../components/homeComponent/services/Services";
 import Stats from "../components/homeComponent/stats/Stats";
 import Workflow from "../components/homeComponent/workflow/Workflow";
 import Support from "../components/homeComponent/support/Support";
-// import Faqs from '../components/homeComponent/faqs/Faqs'
-// import ContactUs from '../components/homeComponent/contactUs/ContactUs'
 
 const Home = () => {
   const [latitude, setLatitude] = useState("");
@@ -17,9 +15,7 @@ const Home = () => {
       setLatitude(position.coords.latitude);
       setLongitude(position.coords.longitude);
     });
-  }, []);
-
-  console.log(latitude, longitude);
+  }, [latitude, longitude]);
 
   return (
     <div style={{ overflow: "hidden" }}>
@@ -29,8 +25,6 @@ const Home = () => {
       <Services />
       <Stats />
       <Equipments />
-      {/* <Faqs /> */}
-      {/* <ContactUs /> */}
     </div>
   );
 };
